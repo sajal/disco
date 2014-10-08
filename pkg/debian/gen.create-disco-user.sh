@@ -23,6 +23,8 @@ case "\$1" in
                     disco 2>/dev/null
         fi
         usermod -c "Disco" -d ${RELSRV} -g disco disco
+        mkdir /mnt/disco
+        chown disco:disco /mnt/disco
         chown disco:disco ${RELSRV}
         su disco --command="""
             ssh-keygen -N '' -f ${RELSRV}/.ssh/id_dsa
