@@ -325,7 +325,7 @@ def decode(p0):
     p3 = p2.replace(b'\x01\x01', b'\x01')
     return p3
 
-def sort_reader(fd, fname, read_buffer_size=8192):
+def sort_reader(fd, fname, read_buffer_size=1048576):
     buf = b""
     while True:
         r = fd.read(read_buffer_size)
