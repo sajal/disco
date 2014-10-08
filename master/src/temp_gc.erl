@@ -8,7 +8,7 @@
 
 -export([start_link/2]).
 
--define(GC_INTERVAL, 2 * ?DAY).
+-define(GC_INTERVAL, 1 * ?HOUR).
 
 -spec start_link(node(), path()) -> no_return().
 start_link(Master, DataRoot) ->
