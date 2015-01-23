@@ -27,7 +27,7 @@
 
 % The maximum number of active HTTP connections on a system (this
 % applies separately for GET and PUT operations).
--define(HTTP_MAX_ACTIVE, 3).
+-define(HTTP_MAX_ACTIVE, 60).
 
 % The maximum number of waiting HTTP connections to queue up on a busy system.
 -define(HTTP_QUEUE_LENGTH, 100).
@@ -36,7 +36,7 @@
 % HTTP_MAX_CONNS * 2 * 2 + 32 < Maximum number of file descriptors, where
 % 2 = Get and put, 2 = two FDs required for each connection (connection
 % itself + a file it accesses), 32 = a guess how many extra fds is needed.
--define(HTTP_MAX_CONNS, 128).
+-define(HTTP_MAX_CONNS, 10240).
 
 % How long to keep a PUT request in queue if the system is busy.
 -define(PUT_WAIT_TIMEOUT, (1 * ?MINUTE)).
